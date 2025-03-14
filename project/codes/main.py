@@ -15,11 +15,16 @@ name = name_cpy[0]
 #get_age
 while True:
 	age = input(f"Qual sua idade? \n{name}: ")
-	if age.isdigit():
+	if int(age) <= 0:
+		print("Você nem nasceu ainda... Responda uma idade válida")
+		tm.sleep(5)
+		PlusOs.clear()
+		continue
+	elif age.isdigit():
 		pass
 	else:
 		print("Somente números são aceitos como idade. Por favor, tente de novo!")
-		tm.sleep(3)
+		tm.sleep(5)
 		PlusOs.clear()
 		continue
 	break
